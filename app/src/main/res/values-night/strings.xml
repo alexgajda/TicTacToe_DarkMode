@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TicTacToe With Dark Mode</string>
+    <string name="button">Button</string>
+    <string name="play">Play</string>
+    <string name="settings">Settings</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="with_dark_mode">With Dark Mode</string>
+    <string name="sound">Sound</string>
+</resources>
