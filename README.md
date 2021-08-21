@@ -1,1 +1,2 @@
-A TicTacToe gaem with a brand new design, including Dark Mode option!
+A TicTacToe game with a brand new design, including Dark Mode option!
+Have Fun  :)
