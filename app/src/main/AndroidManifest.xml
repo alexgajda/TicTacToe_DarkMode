@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToeWithDarkMode">
-        <activity android:name=".giveNamesActivity"></activity>
+        <activity
+            android:name=".giveNamesActivity"
+            android:label="@string/title_activity_give_names"
+            android:theme="@style/Theme.TicTacToeWithDarkMode.NoActionBar"></activity>
         <activity android:name=".gameActivity" />
         <activity android:name=".settingsActivity" />
         <activity android:name=".MainActivity">

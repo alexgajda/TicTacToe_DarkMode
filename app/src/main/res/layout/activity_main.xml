@@ -62,7 +62,7 @@
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:gravity="center"
-        android:text="Created with love by Alex Gajda"
+        android:text="@string/created_with_love_by_alex_gajda"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
