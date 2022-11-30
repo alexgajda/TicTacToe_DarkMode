@@ -14,7 +14,6 @@
             android:label="@string/title_activity_give_names"
             android:theme="@style/Theme.TicTacToeWithDarkMode.NoActionBar"></activity>
         <activity android:name=".gameActivity" />
-        <activity android:name=".settingsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
