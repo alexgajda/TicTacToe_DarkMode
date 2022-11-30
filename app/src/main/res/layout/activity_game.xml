@@ -5,6 +5,7 @@
     android:id="@+id/gameLayer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".gameActivity">
 
     <ImageView
@@ -32,6 +33,7 @@
         android:background="@android:color/transparent"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/green"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,15 +41,14 @@
 
     <Button
         android:id="@+id/buttonTL"
-        style="?android:attr/borderlessButtonStyle"
         android:layout_width="98dp"
         android:layout_height="104dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="30dp"
-        android:background="@android:color/transparent"
+        android:clickable="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/green"
+        android:textColor="@color/black"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/buttonTM"
         app:layout_constraintHorizontal_bias="1.0"
@@ -74,11 +75,12 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="98dp"
         android:layout_height="104dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="@+id/buttonML"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonML"
         app:layout_constraintTop_toBottomOf="@+id/buttonML" />
 
@@ -87,12 +89,12 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="98dp"
         android:layout_height="104dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="@+id/buttonMM"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonMM"
         app:layout_constraintTop_toBottomOf="@+id/buttonMM" />
 
@@ -101,11 +103,12 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="98dp"
         android:layout_height="104dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="@+id/buttonMR"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonMR"
         app:layout_constraintTop_toBottomOf="@+id/buttonMR" />
 
@@ -170,7 +173,7 @@
         android:layout_width="165dp"
         android:layout_height="114dp"
         android:gravity="center_horizontal"
-        android:textSize="48sp"
+        android:textSize="96sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/playerX_text"
         app:layout_constraintHorizontal_bias="0.0"
@@ -183,7 +186,7 @@
         android:layout_width="165dp"
         android:layout_height="114dp"
         android:gravity="center_horizontal"
-        android:textSize="48sp"
+        android:textSize="96sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/playerO_text"
         app:layout_constraintHorizontal_bias="1.0"
@@ -208,6 +211,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
