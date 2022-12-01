@@ -34,10 +34,10 @@ public class giveNamesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String x = nameX.getText().toString();
                 String O = nameO.getText().toString();
-                if (x.equals("")){
+                if (x.isEmpty() || (x.trim().length() == 0)){
                     x = "PlayerX";
                 }
-                if (O.equals("")){
+                if ((O.isEmpty()) || (O.trim().length() == 0)){
                     O = "PlayerO";
                 }
                 Intent intent = new Intent(giveNamesActivity.this, gameActivity.class);
