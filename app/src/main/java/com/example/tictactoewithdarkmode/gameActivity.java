@@ -60,8 +60,8 @@ public class gameActivity extends AppCompatActivity {
 
         //intent of giveNames activity
         Intent intent = getIntent();
-        String playerX = intent.getStringExtra("Playerx");
-        String playerO = intent.getStringExtra("Playero");
+        String playerX = intent.getStringExtra("Player1");
+        String playerO = intent.getStringExtra("Player2");
 
         TextView textX = findViewById(R.id.playerX_text);
         TextView textO = findViewById(R.id.playerO_text);
