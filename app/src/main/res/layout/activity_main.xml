@@ -82,13 +82,13 @@
         android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/darkMode"
-        android:layout_width="184dp"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:text="@string/darkmode"
         android:textColor="@color/green"
-        android:textSize="35dp"
+        android:id="@+id/DarkMode"
+        android:layout_width="190dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="@string/dark_mode"
+        android:textSize="34dp"
         app:layout_constraintEnd_toEndOf="@+id/withDarkMode"
         app:layout_constraintStart_toStartOf="@+id/withDarkMode"
         app:layout_constraintTop_toBottomOf="@+id/withDarkMode" />

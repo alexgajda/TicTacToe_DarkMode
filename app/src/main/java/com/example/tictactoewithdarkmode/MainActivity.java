@@ -3,20 +3,29 @@ package com.example.tictactoewithdarkmode;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    private boolean hasTurned = false;
+
+    //when the back button is pressed it closes the app
+    @Override
+    public void onBackPressed() {
+        //terminates app
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,24 +56,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /////////DARK MODE BUTTON
+        //textview
+        TextView darkMod = findViewById(R.id.DarkMode);
+        //shared preferences
+        SharedPreferences shared = getSharedPreferences("AppSettingPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor sharedPrefs = shared.edit();
 
+        boolean isNightModeOn = shared.getBoolean("NightMode", false);
 
-        //todo
-        TextView darkMod = findViewById(R.id.darkMode);
+        if (isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
-        boolean isNight =  AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
         darkMod.setOnClickListener(view -> {
-
+            //vibrate
             vib.vibrate(50);
-            if (isNight){
-                Log.d("1", "first:");
-                hasTurned = true;
+            //on -> off
+            if(isNightModeOn){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-            }else{
-                Log.d("2", "second");
-                hasTurned = true;
+                sharedPrefs.putBoolean("NightMode", false);
+                sharedPrefs.apply();
+            //off -> on
+            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                sharedPrefs.putBoolean("NightMode", true);
+                sharedPrefs.apply();
             }
         });
 

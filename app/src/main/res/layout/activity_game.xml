@@ -18,10 +18,10 @@
         android:textSize="14dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/playerO_score"
+        app:layout_constraintEnd_toEndOf="@+id/player2score"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="@+id/playerXscore"
-        app:layout_constraintTop_toBottomOf="@+id/playerXscore"
+        app:layout_constraintStart_toStartOf="@+id/player1score"
+        app:layout_constraintTop_toBottomOf="@+id/player1score"
         app:layout_constraintVertical_bias="0.542" />
 
     <ImageView
@@ -185,46 +185,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/playerX_text"
+        android:id="@+id/player1_text"
         android:layout_width="164dp"
         android:layout_height="58dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="468dp"
         android:gravity="center"
         android:textSize="34dp"
-        app:layout_constraintEnd_toStartOf="@+id/playerO_text"
+        app:layout_constraintEnd_toStartOf="@+id/player2_text"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/playerXscore"
+        android:id="@+id/player1score"
         android:layout_width="165dp"
         android:layout_height="114dp"
         android:gravity="center_horizontal"
         android:textSize="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/playerX_text"
+        app:layout_constraintEnd_toEndOf="@+id/player1_text"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/playerX_text"
-        app:layout_constraintTop_toBottomOf="@+id/playerX_text"
+        app:layout_constraintStart_toStartOf="@+id/player1_text"
+        app:layout_constraintTop_toBottomOf="@+id/player1_text"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/playerO_score"
+        android:id="@+id/player2score"
         android:layout_width="165dp"
         android:layout_height="114dp"
         android:gravity="center_horizontal"
         android:textSize="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/playerO_text"
+        app:layout_constraintEnd_toEndOf="@+id/player2_text"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/playerO_text"
-        app:layout_constraintTop_toBottomOf="@+id/playerO_text"
+        app:layout_constraintStart_toStartOf="@+id/player2_text"
+        app:layout_constraintTop_toBottomOf="@+id/player2_text"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/playerO_text"
+        android:id="@+id/player2_text"
         android:layout_width="164dp"
         android:layout_height="58dp"
         android:layout_marginTop="468dp"

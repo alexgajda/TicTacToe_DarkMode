@@ -21,8 +21,8 @@ public class giveNamesActivity extends AppCompatActivity {
 
 
         //back to main arrow
-        ImageButton returntomain =  findViewById(R.id.returnToMain2);
-        returntomain.setOnClickListener(v -> {
+        ImageButton returnToMain =  findViewById(R.id.returnToMain2);
+        returnToMain.setOnClickListener(v -> {
             //intent to MainActivity
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
