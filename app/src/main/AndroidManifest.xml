@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToeWithDarkMode">
         <activity
+            android:screenOrientation="locked"
             android:name=".giveNamesActivity"
             android:label="@string/title_activity_give_names"
             android:theme="@style/Theme.TicTacToeWithDarkMode.NoActionBar" />
-        <activity android:name=".gameActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:screenOrientation="locked"
+            android:name=".gameActivity" />
+        <activity
+            android:screenOrientation="locked"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
