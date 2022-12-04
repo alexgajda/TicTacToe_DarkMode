@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class gameActivity extends AppCompatActivity {
 
     //initialize
+    private int counter = 0;
     private int num = 0;
     private int scoreX = 0;
     private int scoreO = 0;
@@ -30,6 +31,8 @@ public class gameActivity extends AppCompatActivity {
     private Button playAgain;
     private TextView s1;
     private TextView s2;
+    private TextView text1;
+    private TextView text2;
 
     @Override
     //if the back arrow from navigation bar of the phone is pressed
@@ -61,8 +64,8 @@ public class gameActivity extends AppCompatActivity {
         String player2 = intent.getStringExtra("Player2");
 
         //create Textview
-        TextView text1 = findViewById(R.id.player1_text);
-        TextView text2 = findViewById(R.id.player2_text);
+        text1 = findViewById(R.id.player1_text);
+        text2 = findViewById(R.id.player2_text);
 
         //set the two Textview to the users' input
         text1.setText(player1);
@@ -110,6 +113,10 @@ public class gameActivity extends AppCompatActivity {
             overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
         });
 
+
+        if (counter % 2 == 0){
+            text1.setBackgroundColor(Color.GRAY);
+        }
 
 
             tl.setOnClickListener(view -> {
@@ -190,15 +197,38 @@ public class gameActivity extends AppCompatActivity {
 
         //print x or y to textview
         void printChar(Button but){
-            if ((num % 2) == 0){
-                but.setText("X");
+            if(counter % 2 == 0) {
+                if ((num % 2) == 0) {
+                    but.setText("X");
+                } else {
+                    but.setText("O");
+                }
             }else{
-                but.setText("O");
+                if ((num % 2) == 0) {
+                    but.setText("O");
+                } else {
+                    but.setText("X");
+                }
             }
         }
 
     //checks if someone won
     private void checkWin() {
+        //change colors of who ha turn
+        if ((counter % 2 == 0) && (num % 2 == 0)){
+            text1.setBackgroundColor(Color.GRAY);
+            text2.setBackgroundColor(Color.TRANSPARENT);
+        }else if ((counter % 2 == 0) && (num % 2 == 1)){
+            text2.setBackgroundColor(Color.GRAY);
+            text1.setBackgroundColor(Color.TRANSPARENT);
+        }else  if ((counter % 2 == 1) && (num % 2 == 0)){
+            text2.setBackgroundColor(Color.GRAY);
+            text1.setBackgroundColor(Color.TRANSPARENT);
+        }else if ((counter % 2 == 1) && (num % 2 == 1)){
+            text1.setBackgroundColor(Color.GRAY);
+            text2.setBackgroundColor(Color.TRANSPARENT);
+        }
+
         //creates vibrator
         Vibrator vib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         //boolean if 1 of bellow statements came true
@@ -337,11 +367,23 @@ public class gameActivity extends AppCompatActivity {
 
         //when the round ends
         if (num == 9){
+            //changes player
+            counter++;
+            //set the player colors to transparent whenever the round finishes
+            text2.setBackgroundColor(Color.TRANSPARENT);
+            text1.setBackgroundColor(Color.TRANSPARENT);
             //makes the play again Button Visible and Clickable
             playAgain.setVisibility(View.VISIBLE);
             playAgain.setClickable(true);
             //when the Play again Button is pressed
             playAgain.setOnClickListener(v -> {
+                if (counter % 2 == 0) {
+                    text2.setBackgroundColor(Color.TRANSPARENT);
+                    text1.setBackgroundColor(Color.GRAY);
+                }else{
+                    text1.setBackgroundColor(Color.TRANSPARENT);
+                    text2.setBackgroundColor(Color.GRAY);
+                }
                 vib.vibrate(60);
                 num = 0;
                 //empty all buttons' text
